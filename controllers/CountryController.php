@@ -69,7 +69,7 @@ class CountryController extends Controller
         $model = new Country();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $imageName = $model->code;
+            $imageName = $model->code.rand(1,4000);
             
             $img = UploadedFile::getInstance($model, 'file');
            // print_r($img);die;
@@ -104,7 +104,7 @@ class CountryController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $imageName = $model->code;
+            $imageName = $model->code.rand(1,4000);
             $img = UploadedFile::getInstance($model, 'file');
            // print_r($img);die;
             $model->file = UploadedFile::getInstance($model, 'file');

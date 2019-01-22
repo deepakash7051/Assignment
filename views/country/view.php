@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
  
-    <?php $logo = str_replace("1","",$model->attributes['logo']);   ?>    
+    <?php //echo $logo = str_replace("1","",$model->attributes['logo']);   ?>    
     
     <?= DetailView::widget([
         'model' => $model,
@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'population',
             [
                 'attribute'=>'logo',
-                'value'=> Yii::getAlias('@logoUrl').'/'.$logo,
+                'value'=> Yii::getAlias('@logoUrl').'/'.$model->attributes['logo'],
                 //'value'=>'http://localhost/yii/web/upload/In.jpg',
                'format'=>['image',['width'=>'80','height'=>'80']],
             ]
